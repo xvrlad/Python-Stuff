@@ -1,0 +1,4 @@
+Angus McGurkinshaw,70.1,1.72
+Peach Melba,57.2,1.51
+Jock Jolly,110.5,abc
+Helen Highwater,60.0,1.50
