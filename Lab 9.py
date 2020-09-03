@@ -102,9 +102,7 @@ class MyLibrary:
                 title = elements[comma_index + 1:]
                 book_object = Book(code,title)
                 books_list.append(book_object)
-            # books_list = read_file.read()
-            # read_file.close()
-            #
+
             self.__books_list = books_list
             self.__on_loan_records_list = []
 
@@ -117,53 +115,60 @@ class MyLibrary:
         for book_object in self.__books_list:
             print(book_object)
 
-    # def find_book(self, code):
-    #     if code.isdigit():
-    #         return None
-    #     else:
-    #         for book_object in self.__books_list:
-    #             if code in book_object and book_object.isavailable():
-    #                 print(book_object)
-    #
-    # def borrow_book(self, book, member, issue_date):
-    #     if book == None:
-    #         print("ERROR: could not issue the book.")
-    #     else:
-    #         new_record = Record(book, member, issue_date)
-    #         self.__on_loan_records_list.append(new_record)
-    #         print("The {} is borrowed by {}.".format(book, member))
-    #
-    #
-    # def show_available_books(self):
-    #     pass
+    def find_book(self, code):
+        for book_object in self.__books_list:
+            if code == book_object.get_book_code() and book_object.is_available():
+                return book_object
+        return None
+
+    def borrow_book(self, book, member, issue_date):
+        if book != None:
+            new_record = Record(book, member, issue_date)
+            self.__on_loan_records_list.append(new_record)
+            print("{} is borrowed by {}.".format(book.get_book_title(), member.get_name()))
+        else:
+            print("ERROR: could not issue the book.")
+
+    def show_available_books(self):
+        for book in self.__books_list:
+            if book.is_available():
+                print(book)
+
+    def find_record(self, code):
+        for record in self.__on_loan_records_list:
+            if code == record.get_book_code() and record.is_on_loan():
+                return record
+        return None
+
+    def return_book(self, record):
+        if record != None:
+            record.return_book()
+            print("{} is returned successfully.".format(record.get_book_code()))
+        else:
+            print("ERROR: could not return the book.")
+
+    def show_on_loan_records(self):
+        for record in self.__on_loan_records_list:
+            if record.is_on_loan():
+                print(record)
+
+    def show_all_elements(self):
+        for record in self.__on_loan_records_list:
+            print(record)
 
 def main():
     library = MyLibrary('simple_books.txt')
+    m1 = Member(1001, "Michael")
+    library.borrow_book(library.find_book('QS12.02.003'), m1, "2020-08-12")
+    library.borrow_book(library.find_book('QK12.04.002'), m1, "2020-08-15")
+    library.borrow_book(library.find_book('QA12.04.004'), m1, "2020-08-15")
+    library.return_book(library.find_record('QK12.04.002'))
+    library.return_book(library.find_record('QA12.04.004'))
     print()
-    library.show_all_books()
+    library.show_on_loan_records()
     print()
-    library = MyLibrary('input_file.txt')
-    library.show_all_books()
-    # library = MyLibrary('simple_books.txt')
-    # print()
-    # b1 = library.find_book('003')
-    # m1 = Member(1001, "Michael")
-    # library.borrow_book(b1, m1, "2020-08-12")
-    # print()
-    # print(m1)
-    # print()
-    # library = MyLibrary('simple_books.txt')
-    # print()
-    # b1 = library.find_book('QS12.02.003')
-    # m1 = Member(1001, "Michael")
-    # library.borrow_book(b1, m1, "2020-08-12")
-    # print()
-    # b2 = library.find_book('QA12.04.004')
-    # library.borrow_book(b2, m1, "2020-08-12")
-    # print()
-    # library.show_available_books()
-    # print()
-    # print(m1)
+    library.show_all_elements()
+
     return
 
 main()
