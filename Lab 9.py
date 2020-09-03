@@ -56,9 +56,6 @@ class Member:
         else:
             return "\n".join(self.__on_loan_books_list)
 
-class MyLibrary:
-    def __init__(self, ):
-
 class Record:
     def __init__(self, book, member, issue_date):
         book.borrow_book()
@@ -90,34 +87,83 @@ class Record:
     def __str__(self):
         return str(self.__member.get_name()) + ", " + str(self.__book) + ", issued date=" + str(self.__issue_date)
 
+class MyLibrary:
+    def __init__(self, filename):
+        try:
+            read_file = open(filename, 'r')
+            contents = read_file.read()
+            read_file.close()
+
+            contents = contents.split("\n")
+            books_list = []
+            for elements in contents:
+                comma_index = elements.index(",")
+                code = elements[:comma_index]
+                title = elements[comma_index + 1:]
+                book_object = Book(code,title)
+                books_list.append(book_object)
+            # books_list = read_file.read()
+            # read_file.close()
+            #
+            self.__books_list = books_list
+            self.__on_loan_records_list = []
+
+            print("{} books loaded.".format(len(self.__books_list)))
+        except FileNotFoundError:
+            print("ERROR: The file '{}' does not exist.".format(filename))
+            self.__books_list = []
+
+    def show_all_books(self):
+        for book_object in self.__books_list:
+            print(book_object)
+
+    # def find_book(self, code):
+    #     if code.isdigit():
+    #         return None
+    #     else:
+    #         for book_object in self.__books_list:
+    #             if code in book_object and book_object.isavailable():
+    #                 print(book_object)
+    #
+    # def borrow_book(self, book, member, issue_date):
+    #     if book == None:
+    #         print("ERROR: could not issue the book.")
+    #     else:
+    #         new_record = Record(book, member, issue_date)
+    #         self.__on_loan_records_list.append(new_record)
+    #         print("The {} is borrowed by {}.".format(book, member))
+    #
+    #
+    # def show_available_books(self):
+    #     pass
+
 def main():
-    m1 = Member(1001, "Michael")
-    b1 = Book("QS12.03.001", "The Lord Of The Rings")
-    b2 = Book("QK12.04.002", "The Hitchhiker's Guide To The Galaxy")
-    b3 = Book("QS12.02.003", "The Dune Chronicles")
-    r1 = Record(b1, m1, "2020-08-12")
-    print(r1)
-    r2 = Record(b3, m1, "2020-08-15")
-    print(r2)
-    r1.return_book()
+    library = MyLibrary('simple_books.txt')
     print()
-    print(r1)
+    library.show_all_books()
     print()
-    print(b1)
-    print()
-    print(m1)
-    print()
-    m1 = Member(1001, "Michael")
-    b1 = Book("QS12.03.001", "The Lord Of The Rings")
-    b2 = Book("QK12.04.002", "The Hitchhiker's Guide To The Galaxy")
-    b3 = Book("QS12.02.003", "The Dune Chronicles")
-    r1 = Record(b1, m1, "2020-08-12")
-    print(r1)
-    r2 = Record(b3, m1, "2020-08-15")
-    print(r2)
-    r1.return_book()
-    print()
-    print(b1.is_available())
+    library = MyLibrary('input_file.txt')
+    library.show_all_books()
+    # library = MyLibrary('simple_books.txt')
+    # print()
+    # b1 = library.find_book('003')
+    # m1 = Member(1001, "Michael")
+    # library.borrow_book(b1, m1, "2020-08-12")
+    # print()
+    # print(m1)
+    # print()
+    # library = MyLibrary('simple_books.txt')
+    # print()
+    # b1 = library.find_book('QS12.02.003')
+    # m1 = Member(1001, "Michael")
+    # library.borrow_book(b1, m1, "2020-08-12")
+    # print()
+    # b2 = library.find_book('QA12.04.004')
+    # library.borrow_book(b2, m1, "2020-08-12")
+    # print()
+    # library.show_available_books()
+    # print()
+    # print(m1)
     return
 
 main()
