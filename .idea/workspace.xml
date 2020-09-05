@@ -27,7 +27,28 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
-  <component name="RunManager" selected="Python.Lab 9">
+  <component name="RunManager" selected="Python.Lab 10">
+    <configuration name="Lab 10" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Python-Stuff" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Lab 10.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Lab 8" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Python-Stuff" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -72,6 +93,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Lab 10" />
         <item itemvalue="Python.Lab 9" />
         <item itemvalue="Python.Lab 8" />
       </list>
@@ -93,30 +115,30 @@
     <option name="LAST_COMMIT_MESSAGE" value="more files" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="745" height="320" key="GridCell.Tab.0.bottom" timestamp="1599131176196">
+    <state width="745" height="197" key="GridCell.Tab.0.bottom" timestamp="1599292306266">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="745" height="320" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599131176196" />
-    <state width="745" height="320" key="GridCell.Tab.0.center" timestamp="1599131176196">
+    <state width="745" height="197" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599292306266" />
+    <state width="745" height="197" key="GridCell.Tab.0.center" timestamp="1599292306266">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="745" height="320" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599131176196" />
-    <state width="745" height="320" key="GridCell.Tab.0.left" timestamp="1599131176196">
+    <state width="745" height="197" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599292306266" />
+    <state width="745" height="197" key="GridCell.Tab.0.left" timestamp="1599292306266">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="745" height="320" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599131176196" />
-    <state width="745" height="320" key="GridCell.Tab.0.right" timestamp="1599131176196">
+    <state width="745" height="197" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599292306266" />
+    <state width="745" height="197" key="GridCell.Tab.0.right" timestamp="1599292306266">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="745" height="320" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599131176196" />
+    <state width="745" height="197" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599292306266" />
     <state x="772" y="236" key="Registry" timestamp="1599126739048">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="772" y="236" key="Registry/0.0.1536.824@0.0.1536.824" timestamp="1599126739048" />
-    <state x="555" y="60" key="SettingsEditor" timestamp="1599108179652">
+    <state x="555" y="60" key="SettingsEditor" timestamp="1599131496367">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="555" y="60" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1599108179652" />
+    <state x="555" y="60" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1599131496367" />
     <state x="971" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599104053688">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
